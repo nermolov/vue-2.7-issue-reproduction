@@ -6,13 +6,20 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { defineComponent, ref } from 'vue';
 import HelloWorld from './components/HelloWorld.vue';
 
-export default Vue.extend({
+export default defineComponent({
   name: 'App',
   components: {
     HelloWorld
+  },
+  setup() {
+    const helloWorld = ref<InstanceType<typeof HelloWorld> | null>(null);
+
+    return {
+      helloWorld
+    }
   }
 });
 </script>
